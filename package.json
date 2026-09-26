@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-help-scout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server for help-scout",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-f05ca1815da0d478cd907d43fecb9919a6f6ce8f405ca97cd9177f39f633b868",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-59ad068c9bc5cf26ca426228128309c13fd18229fcf799312d8a32de28aae695",
+    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
   }
 }
