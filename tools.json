@@ -1,0 +1,131 @@
+[
+  {
+    "name": "helpscout_list_conversations",
+    "description": "Return a bounded Help Scout conversation page with subject, customer, inbox, assignee, tags, status, waiting time, and timestamps. Answers which support requests match an account, status, inbox, tag, or search expression.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Help Scout OAuth 2 access token"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "all",
+            "closed",
+            "open",
+            "pending",
+            "spam"
+          ]
+        },
+        "inbox_id": {
+          "type": "number"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string",
+          "description": "Help Scout search expression such as (email:\"buyer@example.com\")"
+        },
+        "modified_since": {
+          "type": "string",
+          "description": "ISO 8601 timestamp"
+        },
+        "page": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "helpscout_get_conversation",
+    "description": "Return one Help Scout conversation with full customer, inbox, assignee, tag, status, and timing details, optionally embedding its threads. Answers what happened in a specific support case.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Help Scout OAuth 2 access token"
+        },
+        "conversation_id": {
+          "type": "number",
+          "description": "Help Scout conversation ID"
+        },
+        "include_threads": {
+          "type": "boolean",
+          "description": "Embed conversation threads; chat text can be truncated by Help Scout"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "conversation_id"
+      ]
+    }
+  },
+  {
+    "name": "helpscout_list_inboxes",
+    "description": "Return Help Scout inboxes accessible to the token with IDs, names, email addresses, and creation or update timestamps. Answers which support queues can be used for filtering and reporting.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Help Scout OAuth 2 access token"
+        },
+        "page": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "helpscout_email_report",
+    "description": "Return Help Scout email-support volume, replies, response time, first-response time, handle time, resolution time, and first-contact resolution for a bounded date range. Answers whether support load and service performance improved or deteriorated.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Help Scout OAuth 2 access token"
+        },
+        "start": {
+          "type": "string",
+          "description": "ISO 8601 report start"
+        },
+        "end": {
+          "type": "string",
+          "description": "ISO 8601 report end"
+        },
+        "inbox_ids": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 25,
+          "description": "Optional inbox IDs"
+        },
+        "office_hours": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "start",
+        "end"
+      ]
+    }
+  }
+]
