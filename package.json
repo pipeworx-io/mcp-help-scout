@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-help-scout",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MCP server for help-scout",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "help-scout",
     "gatewaySlug": "help-scout",
-    "sourceHash": "v1-495a95257d4d39b8a08d4ce12a640dc5b47cf98c96812f9235b8356c20dbd5dc",
-    "sourceCommit": "4844029e402d6bd2fe735add8abf6d46735f8ed5"
+    "sourceHash": "v1-b6f5db8336b6a3e474cf495d3fd5915d0802f21c8f13fd1797ea44e6143e6ce3",
+    "sourceCommit": "0ca9712c0ac03bb0121cc7e81b202d0c45ac02ca"
   }
 }
